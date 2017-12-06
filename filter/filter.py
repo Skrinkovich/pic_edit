@@ -171,6 +171,7 @@ image = Image.open(str(image))
 # image = Image.open("pics/house.jpg")
 image0 = image.copy()
 image00 = image.copy()
+image000 = image.copy()
 c = input("Введите mem, filter или all: ")
 if c == "mem":
     mem(image)
@@ -189,4 +190,4 @@ elif c == "all":
     noise(image)
     vintage(image0)
     glitch(image00)
-    mem(image0)
+    mem(image000)
