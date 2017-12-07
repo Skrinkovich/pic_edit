@@ -166,28 +166,35 @@ def filter(image):
     elif command == "glitch":
         glitch(image)
 
-image = input("Введите путь до фото, которое нужно обработать: ")
-image = Image.open(str(image))
+path = input("path to photo: ")
+image = Image.open(str(path))
 # image = Image.open("pics/house.jpg")
-image0 = image.copy()
-image00 = image.copy()
-image000 = image.copy()
-c = input("Введите mem, filter или all: ")
-if c == "mem":
-    mem(image)
-elif c == "filter":
-    filter(image)
-elif c == "all":
-    BLUR(image)
-    CONTOUR(image)
-    DETAIL(image)
-    EDGE_ENHANCE(image)
-    EMBOSS(image)
-    FIND_EDGES(image)
-    SMOOTH(image)
-    SHARPEN(image)
-    worhl(image)
-    noise(image)
-    vintage(image0)
-    glitch(image00)
-    mem(image000)
+c = input("mem, filter, all or stop: ")
+
+def filterProg(path, c):
+    while c != "stop":
+        # image = Image.open("pics/house.jpg")
+        image = Image.open(str(path))
+        image0 = image.copy()
+        image00 = image.copy()
+        image000 = image.copy()
+        if c == "mem":
+            mem(image)
+        elif c == "filter":
+            filter(image)
+        elif c == "all":
+            BLUR(image)
+            CONTOUR(image)
+            DETAIL(image)
+            EDGE_ENHANCE(image)
+            EMBOSS(image)
+            FIND_EDGES(image)
+            SMOOTH(image)
+            SHARPEN(image)
+            worhl(image)
+            noise(image)
+            vintage(image0)
+            glitch(image00)
+            mem(image000)
+        c = input("mem, filter, all or stop: ")
+filterProg(path, c)
