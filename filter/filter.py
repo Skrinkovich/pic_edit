@@ -173,6 +173,8 @@ c = input("mem, filter, all or stop: ")
 
 def filterProg(path, c):
     while c != "stop":
+        if c == "path":
+            path = input("path to photo: ")
         # image = Image.open("pics/house.jpg")
         image = Image.open(str(path))
         image0 = image.copy()
